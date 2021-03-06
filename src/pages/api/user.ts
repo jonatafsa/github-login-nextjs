@@ -96,7 +96,7 @@ export default async (req, res) => {
   }
 
   if (req.method == 'GET') {
-    res.status(200).json({ message: 'Serverless /API/user', code: process.env.GITHUB_CLIENT_ID })
+    res.status(200).json({ code: process.env.GITHUB_CLIENT_ID })
   }
  
 }
