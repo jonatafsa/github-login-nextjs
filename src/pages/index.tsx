@@ -18,12 +18,10 @@ export default function Home() {
     if (url.parse(uri).query) {
       const code = url.parse(uri).query.substring(5)
       setSessionCode(code)
-      console.log('Vou enviar o código', code)
       
       axios.post('/api/user', {code}).then((request) => {
 
         if(request.data.user.login == undefined) {
-          console.log('Não vou pra login')
           setSessionCode('')
           setModalError(true)
         } else {
