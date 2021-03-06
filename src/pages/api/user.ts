@@ -79,6 +79,8 @@ export default async (req, res) => {
       followers: userGithub.followers
     }
 
+    console.log(userGithub)
+
     const filter = { username: userGithub.login }
 
     const updateDoc = {

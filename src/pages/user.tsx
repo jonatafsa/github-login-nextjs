@@ -77,7 +77,7 @@ export default function User() {
                     <div className={styles.dataRight}>
                         <p>
                             <span>{following}</span>
-                        Seguindo
+                            Following
                     </p>
 
                         <p>
@@ -87,7 +87,7 @@ export default function User() {
 
                         <p>
                             <span>{followers}</span>
-                        Seguidores
+                            Followers
                     </p>
                     </div>
 
