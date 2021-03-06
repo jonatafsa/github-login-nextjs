@@ -60,6 +60,7 @@ export default async (req, res) => {
 
     //Recebe o Código de usuário que está a fazer login na página
     const code = req.body.code
+    console.log('Codigo recebido?', code)
 
     //Chama a função que faz request ao Github pedindo permissão para pegar dados do usuário
     //Passando os dados dados como parâmetros
@@ -68,6 +69,7 @@ export default async (req, res) => {
 
     //Chama a função que retorna os dados do usuário
     const userGithub = await fetchGitHubUser(access_token)
+    console.log('Peguei os dados?', userGithub)
 
     const user = {
       login: userGithub.login,
@@ -96,10 +98,7 @@ export default async (req, res) => {
   }
 
   if (req.method == 'GET') {
-    res.status(200).json({ message: {
-      code: process.env.GITHUB_CLIENT_SECRET,
-      newCode: process.env.GITHUB_CLIENT_ID
-    } })
+    res.status(200).json({ message: 'Serverless /API/user' })
   }
  
 }
