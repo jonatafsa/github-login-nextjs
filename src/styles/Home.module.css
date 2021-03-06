@@ -1,0 +1,98 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  background: rgb(73,83,184);
+  background: linear-gradient(90deg, rgba(73,83,184,1) 0%, rgba(89,101,224,1) 100%);
+}
+
+.container .leftContent {
+  width: 60%;
+}
+
+.container .leftContent img {
+  width: 100%;
+}
+
+.container .rightContent {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+
+  color: var(--white);
+}
+
+.container .rightContent > img {
+  width: 18.5rem;
+  padding-bottom: 4.5rem;
+}
+
+.container .rightContent strong {
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding-bottom: 1.7rem;
+}
+
+.container .rightContent p {
+  width: 40%;
+  font-size: 1rem;
+  margin-bottom: 3.4rem;
+  color: var(--gray-line);
+
+  display: flex;
+  align-items: center;
+}
+
+.container .rightContent p img {
+  width: 2rem;
+  margin-right: 0.8rem;
+}
+
+.container .rightContent button {
+  width: 60%;
+  height: 4rem;
+  background: rgb(41,48,119);
+  border: 0;
+  
+  border-radius: 5px;
+  color: var(--white);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  gap: 1rem;
+
+  transition: background-color 0.2s;
+}
+
+.container .rightContent button img {
+  height: 4rem;
+  justify-content: flex-end;    
+}
+
+.container .rightContent button:hover {
+  background: rgb(20, 23, 46);
+}
+
+.container .loading img {
+  width: 4rem;
+}
+
+@media (max-width: 800px) {
+  .container .leftContent {
+    display: none;
+  }
+
+.container .rightContent {
+  width: 70%;
+}
+
+.container .rightContent p {
+  width: 60%;
+}
+}
