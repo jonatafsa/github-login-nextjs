@@ -75,7 +75,8 @@ export default async (req, res) => {
       avatar: userGithub.avatar_url,
       company: userGithub.company,
       repository: userGithub.repos_url,
-      following: userGithub.following
+      following: userGithub.following,
+      followers: userGithub.followers
     }
 
     const filter = { username: userGithub.login }

@@ -1,34 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Github-Login NextJS
 
-## Getting Started
+App desenvolvido em NextJS, e react com objetico de fazer Login com github.
 
-First, run the development server:
+- ReactJS
+- HTML/CSS
+- Serverless Node
+
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+
+## Features
+
+- Página de fazer login
+- Autenticação via Serverless com Node
+- Página de usuário retornando dados do Github
+- Autenticação de dados em Cookies
+
+![N|Solid](https://github-login.vercel.app/images/login.png)
+
+![N|Solid](https://github-login.vercel.app/images/user.png)
+
+## Tech
+
+Bibliotecas e tecnologias usadas
+- [Typescript] - Superset do Javascript
+- [React] - Biblioteca JavaScript para criação de interfaces
+- [Node] - Plataforma que executa códigos JavaScript no backend/servidor
+- [MongoDB] - Base da dados
+- [js-cookie] - Uma API JavaScript simples e leve para lidar com cookies
+- [next] - A Estrutura React para Produção
+- [axios] - Cliente HTTP para requisição ao serverless
+
+## Installation
+
+O App necessita do [Node.js](https://nodejs.org/) v12+ para funcionar.
+
+Instale todas as depencias e exeute:
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000) com seu navegador para ver o resultado.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Você pode começar a editar a página modificando `pages/index.js`. A página é atualizada automaticamente conforme você edita o arquivo.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+As [Rotas API](https://nextjs.org/docs/api-routes/introduction) podem ser acessadas em [http://localhost:3000/api/hello](http://localhost:3000/api/user). Este ponto final pode ser editado em `pages/api/user.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+O `pages/api/` é mapeado para `/api/*` Os arquivos neste diretório são tratados como [Rotas API](https://nextjs.org/docs/api-routes/introduction) em vez de páginas React.
 
-## Learn More
+Variáveis de Anbiente...
 
-To learn more about Next.js, take a look at the following resources:
+```sh
+GITHUB_CLIENT_SECRET --Github Oauth Apps
+GITHUB_CLIENT_ID --Github Oauth Apps
+MONGODB_URI --Autenticação MongoDB
+```
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+FREE
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+**Free Software, Hell Yeah!**
 
-## Deploy on Vercel
+[Typescript]: <https://www.typescriptlang.org/docs/>
+[React]: <https://pt-br.reactjs.org/>
+[Node]: <https://nodejs.org/en/>
+[MongoDB]: <https://www.mongodb.com/>
+[js-cookie]: <https://www.npmjs.com/package/js-cookie>
+[react-dom]: <https://pt-br.reactjs.org/docs/react-dom.html>
+[next]: <https://nextjs.org/>
+[axios]: <https://www.npmjs.com/package/axios>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

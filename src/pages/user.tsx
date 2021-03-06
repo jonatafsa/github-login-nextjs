@@ -4,6 +4,7 @@ import Cookies from 'js-cookie'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
+import axios from 'axios'
 
 export default function User() {
 
@@ -15,6 +16,7 @@ export default function User() {
     const [company, setCompany] = useState('')
     const [repository, setRepository] = useState('')
     const [following, setFollowing] = useState('')
+    const [followers, setFollowers] = useState('')
 
     function logout() {
         Cookies.remove('login')
@@ -23,6 +25,7 @@ export default function User() {
         Cookies.remove('company')
         Cookies.remove('repository')
         Cookies.remove('following')
+        Cookies.remove('followers')
         routes.push('/')
     }
 
@@ -41,8 +44,12 @@ export default function User() {
             setCompany(Cookies.get('company'))
         }
 
-        setRepository(Cookies.get('repository'))
+        axios.get('https://api.github.com/users/jonatafsa/repos').then((response) => {
+            setRepository(response.data.length)
+        })
+
         setFollowing(Cookies.get('following'))
+        setFollowers(Cookies.get('followers'))
     }, [])
 
     return (
@@ -69,17 +76,17 @@ export default function User() {
                 <div className={styles.userInfoRight}>
                     <div className={styles.dataRight}>
                         <p>
-                            <span>523</span>
-                        Tempo logado
+                            <span>{following}</span>
+                        Seguindo
                     </p>
 
                         <p>
-                            <span>15</span>
+                            <span>{repository}</span>
                         Repositórios
                     </p>
 
                         <p>
-                            <span>{following}</span>
+                            <span>{followers}</span>
                         Seguidores
                     </p>
                     </div>
