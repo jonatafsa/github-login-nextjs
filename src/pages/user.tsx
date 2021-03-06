@@ -3,6 +3,7 @@ import styles from '../styles/User.module.css'
 import Cookies from 'js-cookie'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 export default function User() {
 
@@ -26,34 +27,38 @@ export default function User() {
     }
 
     useEffect(() => {
-    if (Cookies.get('login') == undefined) { 
-        logout()
-     }
+        if (Cookies.get('login') == undefined) {
+            logout()
+        }
 
-    setLogin(Cookies.get('login'))
-    setName(Cookies.get('name'))
-    setAvatar(Cookies.get('avatar'))
-    
-    if (Cookies.get('company') == 'null') {
-        setCompany('No Company')
-    } else {
-        setCompany(Cookies.get('company'))
-    }
+        setLogin(Cookies.get('login'))
+        setName(Cookies.get('name'))
+        setAvatar(Cookies.get('avatar'))
 
-    setRepository(Cookies.get('repository'))
-    setFollowing(Cookies.get('following'))
+        if (Cookies.get('company') == 'null') {
+            setCompany('No Company')
+        } else {
+            setCompany(Cookies.get('company'))
+        }
+
+        setRepository(Cookies.get('repository'))
+        setFollowing(Cookies.get('following'))
     }, [])
 
     return (
         <div className={styles.container}>
+            <Head>
+                <title>User - Web Desenvolvedor JS</title>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
             <div className={styles.userContainer}>
-                <div className={styles.userInfoLeft}> 
-                <div className={styles.circle1} >
-                <div className={styles.circle2}>
-                    <img src={avatar} alt="Avatar" />
-                </div>
-                </div>
-                
+                <div className={styles.userInfoLeft}>
+                    <div className={styles.circle1} >
+                        <div className={styles.circle2}>
+                            <img src={avatar} alt="Avatar" />
+                        </div>
+                    </div>
+
                     <strong>{name}</strong>
                     <span>{company}</span>
 
@@ -63,18 +68,18 @@ export default function User() {
 
                 <div className={styles.userInfoRight}>
                     <div className={styles.dataRight}>
-                    <p>
-                        <span>523</span>
+                        <p>
+                            <span>523</span>
                         Tempo logado
                     </p>
 
-                    <p>
-                        <span>15</span>
+                        <p>
+                            <span>15</span>
                         Repositórios
                     </p>
 
-                    <p>
-                        <span>{following}</span>
+                        <p>
+                            <span>{following}</span>
                         Seguidores
                     </p>
                     </div>
