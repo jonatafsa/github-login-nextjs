@@ -71,7 +71,7 @@ export default function Home() {
                 <img src="/icons/logo.svg" alt="githublogo" />
                                     Faça login com seu Guithub para começar
                                 </p>
-              <a href="https://github.com/login/oauth/authorize?client_id=b263019b332553f85c1b&redirect_uri=http://localhost:3000/">
+              <a href="#">
                 <button>
                   Buscar Usuário
                             <img src="/icons/githublogo.svg" alt="githublogo" />
