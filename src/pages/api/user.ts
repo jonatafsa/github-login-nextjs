@@ -40,6 +40,7 @@ async function getAccessToken({ code, client_id, client_secret }) {
   })
   const text = await requestPermissionGithub.text()
   const params = new URLSearchParams(text)
+  console.log('Estou rodando a função getAccessToken ')
   return params.get('access_token')
 }
 
@@ -50,7 +51,8 @@ async function fetchGitHubUser(token) {
     headers: {
       Authorization: 'token ' + token
     }
-  });
+  })
+  console.log('Estou rodando a função fetchGitHubUser ')
   return await requestUserData.json()
 }
 
@@ -61,6 +63,8 @@ export default async (req, res) => {
     //Recebe o Código de usuário que está a fazer login na página
     const code = req.body.code
     console.log('Codigo recebido?', code)
+    console.log('Chave: ', process.env.GITHUB_CLIENT_SECRET)
+    console.log('ID: ', process.env.GITHUB_CLIENT_ID)
 
     //Chama a função que faz request ao Github pedindo permissão para pegar dados do usuário
     //Passando os dados dados como parâmetros
@@ -69,6 +73,7 @@ export default async (req, res) => {
 
     //Chama a função que retorna os dados do usuário
     const userGithub = await fetchGitHubUser(access_token)
+    console.log('Eu acesso com isso', access_token)
     console.log('Peguei os dados?', userGithub)
 
     const user = {
