@@ -96,7 +96,9 @@ export default async (req, res) => {
   }
 
   if (req.method == 'GET') {
-    res.status(200).json({ code: process.env.GITHUB_CLIENT_ID })
+    res.status(200).json({ message: {
+      code: process.env.MONGODB_URI
+    } })
   }
  
 }
