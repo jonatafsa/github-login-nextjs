@@ -44,10 +44,7 @@ export default function User() {
             setCompany(Cookies.get('company'))
         }
 
-        axios.get('https://api.github.com/users/jonatafsa/repos').then((response) => {
-            setRepository(response.data.length)
-        })
-
+        setRepository(Cookies.get('repository'))
         setFollowing(Cookies.get('following'))
         setFollowers(Cookies.get('followers'))
     }, [])
@@ -77,7 +74,7 @@ export default function User() {
                     <div className={styles.dataRight}>
                         <p>
                             <span>{following}</span>
-                            Following
+                            Eu sigo
                     </p>
 
                         <p>
@@ -87,7 +84,7 @@ export default function User() {
 
                         <p>
                             <span>{followers}</span>
-                            Followers
+                            Seguidores
                     </p>
                     </div>
 

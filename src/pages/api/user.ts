@@ -74,7 +74,7 @@ export default async (req, res) => {
       name: userGithub.name,
       avatar: userGithub.avatar_url,
       company: userGithub.company,
-      repository: userGithub.repos_url,
+      repository: userGithub.public_repos,
       following: userGithub.following,
       followers: userGithub.followers
     }

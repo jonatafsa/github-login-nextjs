@@ -31,6 +31,7 @@ export default function Home() {
           Cookies.set('company', request.data.user.company)
           Cookies.set('repository', request.data.user.repository)
           Cookies.set('following', request.data.user.following)
+          Cookies.set('followers', request.data.user.followers)
           routes.push('/user')
         }
 
